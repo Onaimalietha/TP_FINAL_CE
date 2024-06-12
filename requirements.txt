@@ -1,0 +1,6 @@
+control
+numpy
+pymoo
+pyswarms
+time
+matplotlib
