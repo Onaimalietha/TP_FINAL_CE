@@ -9,6 +9,10 @@ desired_error = 0
 desired_overshoot = 5
 desired_ts = 2
 
+Ke = 1
+Ko = 1
+Kt = 1
+
 # PSO tryout
 def f(x):
     for params in x:
@@ -19,7 +23,7 @@ def f(x):
         overshoot_dif = abs(overshoot - desired_overshoot)
         time_dif = abs(settling_time - desired_ts)
         # Calculate a weighted sum of the performance metrics
-        f = (error_dif + overshoot_dif + time_dif)
+        f = (Ke*error_dif + Ko*overshoot_dif + Kt*time_dif)
     return f
 
 # Plant parameters
